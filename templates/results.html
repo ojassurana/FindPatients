@@ -1,0 +1,13 @@
+<h1 align = center>These are the patients that require {{donation}} in {{location}}.</h1>
+<table border=3 align = center>
+    <tr>
+        <td>Name</td>
+        <td>Number</td>
+        {%for i in recipients %}
+        <tr>
+        <td>{{i["Name"]}}</td>
+        <td>{{i["Phone Number"]}}</td>
+        </tr>
+        
+        {%endfor%}
+    </tr>
