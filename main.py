@@ -18,6 +18,9 @@ def home():
 
 		out = Information_Collection.find( {"$and":[{"Item":{"$eq":donation}},{"Location":{"$eq":location}}]}   )           
 
+		# scan= Information_Collection.find()
+		# for i in scan:
+			# print(i)
 
 		recipients = []
 		for i in out:
