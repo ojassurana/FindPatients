@@ -1,4 +1,59 @@
-<h1 align = center>These are the patients that require {{donation}} in {{location}}.</h1>
+<h1 align = center>These are the patients that require {{items[donation-1]}} in {{location}}.</h1>
+
+{% if donation == 8 and location == "All Locations" %}
+<table border=3 align = center>
+    <tr>
+        <td>Name</td>
+        <td>Number</td>
+        <td>Location</td>
+        <td>Item</td>
+        {%for i in recipients %}
+        <tr>
+        <td>{{i["Name"]}}</td>
+        <td>{{i["Phone Number"]}}</td>
+        <td>{{i["Location"]}}</td>
+        <td>{{items[i["Item"]-1]}}</td>
+        </tr>
+        
+        {%endfor%}
+    </tr>
+
+
+{% elif donation == 8 %}
+<table border=3 align = center>
+    <tr>
+        <td>Name</td>
+        <td>Number</td>
+        <td>Item</td>
+        {%for i in recipients %}
+        <tr>
+        <td>{{i["Name"]}}</td>
+        <td>{{i["Phone Number"]}}</td>
+        <td>{{items[i["Item"]-1]}}</td>
+        </tr>
+        
+        {%endfor%}
+    </tr>
+
+
+{% elif location == "All Locations" %}
+<table border=3 align = center>
+    <tr>
+        <td>Name</td>
+        <td>Number</td>
+        <td>Location</td>
+        {%for i in recipients %}
+        <tr>
+        <td>{{i["Name"]}}</td>
+        <td>{{i["Phone Number"]}}</td>
+        <td>{{i["Location"]}}</td>
+        </tr>
+        
+        {%endfor%}
+    </tr>
+
+
+{% else %}
 <table border=3 align = center>
     <tr>
         <td>Name</td>
@@ -11,3 +66,4 @@
         
         {%endfor%}
     </tr>
+{% endif %}
