@@ -322,7 +322,7 @@
 .u-section-2 .u-image-1 {
   width: 103px;
   height: 103px;
-  background-image: url("images/Telegram_software-Logo.wine.png");
+  background-image: url("/static/tele.png");
   background-position: 50% 50%;
   margin: 20px auto 0 436px;
 }
