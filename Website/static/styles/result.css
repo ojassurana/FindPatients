@@ -1,0 +1,84 @@
+body {
+    margin: 0px;
+    color: white;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid transparent;
+    width: 40vw;
+}
+
+td {
+    padding: 15px 20px 15px 20px;
+}
+
+.innerContent {
+    margin-top: -20px;
+}
+
+.dot {
+    font-size: 0.75rem;
+    vertical-align: middle;
+}
+
+.mainHeader {
+    padding-top: 10vh;
+    text-align: left !important;
+    padding-left: 10px;
+    font-size: 2.75rem;
+    font-weight: 600;
+    font-family: 'Raleway', sans-serif;
+}
+
+.mainTable {
+    margin-top: 5vh;
+    padding-bottom: 10vh;
+    font-family: 'Raleway', sans-serif;
+}
+
+.tableHeaderRow {
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-bottom-color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+}
+
+.tableHeaderRow > td {
+    padding-left: 15px !important;
+}
+
+.location, .item, .number {
+    width: 21%;
+    border-bottom-color: rgba(255, 255, 255, 0.6);
+    /* border-right-color: rgba(255, 255, 255, 0.6); */
+}
+/* 
+.location {
+    width: 20%;
+}
+
+.item {
+    width: 20%;
+}
+
+.number {
+    width: 20%;
+} */
+
+.name {
+    width: 36%;
+    border-bottom-color: rgba(255, 255, 255, 0.6);
+}
+
+.emptySpace {
+    height: 10vh;
+}
+
+@media (max-width: 1000px) {
+
+    table {
+        width: 80vw;
+    }
+
+}

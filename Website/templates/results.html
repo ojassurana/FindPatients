@@ -1,69 +1,127 @@
-<h1 align = center>These are the patients that require {{items[donation-1]}} in {{location}}.</h1>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <meta name="keywords" content="Pilatesand Yoga, Pilates for Everybody and Every Body, Become your best self, How To TransformYour Body, Pilates Classes, The mind and body benefits of Pilates">
+        <meta name="description" content="">
+        <meta name="page_type" content="np-template-header-footer-from-plugin">
+        <meta name="generator" content="Nicepage 3.13.2, nicepage.com">
 
-{% if donation == 8 and location == "All Locations" %}
-<table border=3 align = center>
-    <tr>
-        <td>Name</td>
-        <td>Number</td>
-        <td>Location</td>
-        <td>Item</td>
-        {%for i in recipients %}
-        <tr>
-        <td>{{i["Name"]}}</td>
-        <td>{{i["Phone Number"]}}</td>
-        <td>{{i["Location"]}}</td>
-        <td>{{items[i["Item"]-1]}}</td>
-        </tr>
-        
-        {%endfor%}
-    </tr>
+        <title>Result</title>
 
+        <link href="{{ url_for('static', filename='styles/nicepage.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='styles/Home.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='styles/homeNew.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='styles/result.css') }}" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-{% elif donation == 8 %}
-<table border=3 align = center>
-    <tr>
-        <td>Name</td>
-        <td>Number</td>
-        <td>Item</td>
-        {%for i in recipients %}
-        <tr>
-        <td>{{i["Name"]}}</td>
-        <td>{{i["Phone Number"]}}</td>
-        <td>{{items[i["Item"]-1]}}</td>
-        </tr>
-        
-        {%endfor%}
-    </tr>
+        <script type="application/ld+json">{
+            "@context": "http://schema.org",
+            "@type": "Organization",
+            "name": "IndiaCovid",
+            "url": "index.html"
+        }</script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src = "{{ url_for('static', filename = 'result.js') }}"></script>
+        <meta property="og:title" content="Home">
+        <meta property="og:type" content="website">
+        <meta name="theme-color" content="#478ac9">
+        <link rel="canonical" href="index.html">
+        <meta property="og:url" content="index.html">
 
+    </head>
 
-{% elif location == "All Locations" %}
-<table border=3 align = center>
-    <tr>
-        <td>Name</td>
-        <td>Number</td>
-        <td>Location</td>
-        {%for i in recipients %}
-        <tr>
-        <td>{{i["Name"]}}</td>
-        <td>{{i["Phone Number"]}}</td>
-        <td>{{i["Location"]}}</td>
-        </tr>
-        
-        {%endfor%}
-    </tr>
+    <body>
 
+        <div class = "ghandiOverlay">
+            <div class = "innerContent">
 
-{% else %}
-<table border=3 align = center>
-    <tr>
-        <td>Name</td>
-        <td>Number</td>
-        {%for i in recipients %}
-        <tr>
-        <td>{{i["Name"]}}</td>
-        <td>{{i["Phone Number"]}}</td>
-        </tr>
-        
-        {%endfor%}
-    </tr>
-{% endif %}
+                <a href="javascript:history.back()" class="u-btn u-btn-rectangle u-button-style needSupplyButton">Back</a>
+
+                <h1 align = center class = "mainHeader">{{items[donation-1]}} <span class = "dot">•</span> {{location}}</h1>
+                
+                {% if donation == 8 and location == "All Locations" %}
+
+                    <table border=3 align = center class = "mainTable">
+                        <tr class = "tableHeaderRow">
+                            <td class = "location">Location</td>
+                            <td class = "item">Item</td>
+                            <td class = "number">Number</td>
+                            <td class = "name">Name</td>
+                        </tr>
+
+                        {%for i in recipients %}
+                        <tr>
+                            <td class = "location">{{i["Location"]}}</td>
+                            <td class = "item">{{items[i["Item"]-1]}}</td>
+                            <td class = "number">{{i["Phone Number"]}}</td>
+                            <td class = "name">{{i["Name"]}}</td>
+                        </tr>
+                        {%endfor%}
+
+                    </table>
+                
+                {% elif donation == 8 %}
+
+                    <table border=3 align = center class = "mainTable">
+                        <tr class = "tableHeaderRow">
+                            <td class = "item">Item</td>
+                            <td class = "number">Number</td>
+                            <td class = "name">Name</td>
+                        </tr>
+
+                        {%for i in recipients %}
+                        <tr>
+                            <td class = "item">{{items[i["Item"]-1]}}</td>
+                            <td class = "number">{{i["Phone Number"]}}</td>
+                            <td class = "name">{{i["Name"]}}</td>
+                        </tr>
+                        {%endfor%}
+
+                    </table>
+                
+                {% elif location == "All Locations" %}
+                
+                    <table border=3 align = center class = "mainTable">
+                        <tr class = "tableHeaderRow">
+                            <td class = "location">Location</td>
+                            <td class = "number">Number</td>
+                            <td class = "name">Name</td>
+                        </tr>
+
+                        {%for i in recipients %}
+                        <tr>
+                            <td class = "location">{{i["Location"]}}</td>
+                            <td class = "number">{{i["Phone Number"]}}</td>
+                            <td class = "name">{{i["Name"]}}</td>
+                        </tr>
+                        {%endfor%}
+
+                    </table>
+                
+                {% else %}
+
+                    <table border=3 align = center class = "mainTable">
+                        <tr class = "tableHeaderRow">
+                            <td class = "number">Number</td>
+                            <td class = "name">Name</td>
+                        </tr>
+
+                        {%for i in recipients %}
+                        <tr>
+                            <td class = "number">{{i["Phone Number"]}}</td>
+                            <td class = "name">{{i["Name"]}}</td>
+                        </tr>
+                        {%endfor%}
+
+                    </table>
+
+                {% endif %}
+
+                <div class = "emptySpace"></div>
+
+            </div>
+        </div>
+    </body>
+</html>
