@@ -1,15 +1,35 @@
 <html>
     <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <meta name="keywords" content="Pilatesand Yoga, Pilates for Everybody and Every Body, Become your best self, How To TransformYour Body, Pilates Classes, The mind and body benefits of Pilates">
+        <meta name="description" content="">
+        <meta name="page_type" content="np-template-header-footer-from-plugin">
+        <meta name="generator" content="Nicepage 3.13.2, nicepage.com">
+
         <title>Result</title>
 
+        <link href="{{ url_for('static', filename='styles/nicepage.css') }}" rel="stylesheet">
         <link href="{{ url_for('static', filename='styles/Home.css') }}" rel="stylesheet">
         <link href="{{ url_for('static', filename='styles/homeNew.css') }}" rel="stylesheet">
         <link href="{{ url_for('static', filename='styles/result.css') }}" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
+        <script type="application/ld+json">{
+            "@context": "http://schema.org",
+            "@type": "Organization",
+            "name": "IndiaCovid",
+            "url": "index.html"
+        }</script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src = "{{ url_for('static', filename = 'result.js') }}"></script>
+        <script src = "{{ url_for('static', filename = 'home.js') }}"></script>
+        <meta property="og:title" content="Home">
+        <meta property="og:type" content="website">
+        <meta name="theme-color" content="#478ac9">
+        <link rel="canonical" href="index.html">
+        <meta property="og:url" content="index.html">
 
     </head>
 
@@ -24,5 +44,11 @@
 
             </div>
         </div>
+
+        <div class = "mainFooter">
+            <p class = "mainText text-5">If you encounter any issues with our website or bot, do contact us at <a href = "mailto:covid@ojassurana.com">covid@ojassurana.com</a></p>
+            <p class = "mainText text-6">Credits</p>
+        </div>
+        
     </body>
 </html>
