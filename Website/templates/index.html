@@ -47,15 +47,17 @@
         </div>
       </header> -->
     <div class = "ghandiOverlay">
+        <a href="http://t.me/FindPatientsBot" class="u-btn u-btn-rectangle u-button-style needSupplyButton" target="_blank">Need Supplies?</a>
         <div class = "innerContent">
             <p class = "mainText text-1">Find Patients Today</p>
             <div class = "textDivider"></div>
-            <p class = "mainText text-2">Find contact numbers of patients in the city of your choice. Enter your city and the item you are able to donate.</p>
+            <p class = "mainText text-2">Find contact numbers of patients in the city of your choice. Choose your city and the item you are able to donate.</p>
             <form action="find" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" style="padding: 10px" source="mailchimp" name="form-1">
                 <div class="u-form-group u-form-select u-form-group-1">
                   <label for="select-b306" class="u-form-control-hidden u-label">Select</label>
                   <div class="u-form-select-wrapper">
                     <select id="select-b306" name="Donation" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+                      <option value="All Items">All Items</option>
                       <option value="Oxygen Cylinder">Oxygen Cylinder</option>
                       <option value="Hospital Bed">Hospital Bed</option>
                       <option value="Plasma">Plasma</option>
@@ -71,6 +73,7 @@
                   <label for="select-f85a" class="u-form-control-hidden u-label"></label>
                   <div class="u-form-select-wrapper">
                     <select id="select-f85a" name="Location" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required">
+                      <option value="All Locations">All Locations</option>
                       <option value="Gurgaon">Gurgaon</option>
                       <option value="Kollam">Kollam</option>
                       <option value="Korba">Korba</option>
@@ -1017,7 +1020,16 @@
                 The donors with the your item will be given your phone number and they 
                 will call you. 
             </p>
-            <a href="http://t.me/FindPatientsBot" class="u-btn u-btn-rectangle u-button-style telegramButton" target="_blank">Click here to message our <span class = "telegramColour">Telegram</span> bot</a>
+            <a href="http://t.me/FindPatientsBot" class="u-btn u-btn-rectangle u-button-style telegramButton" target="_blank">
+                <span class = "flexrow telegramButtonText">
+                    Click here to message our 
+                    <div class="flexrow">
+                        <div alt="" class="u-image u-image-circle u-image-1 telegramImage" data-image-width="3000" data-image-height="2000"></div>
+                        <span class = "telegramColour">Telegram </span> 
+                    </div>
+                    &nbspbot
+                </span>
+            </a>
             <div class = "emptySpace"></div>
         </div>
     </div>

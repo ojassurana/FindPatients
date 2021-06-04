@@ -23,6 +23,17 @@ svg {
     color: white;
 }
 
+.needSupplyButton {
+    position: absolute;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: transparent;
+    border-radius: 5px !important;
+    transition: 0.2s;
+    right: 0;
+    margin-right: 3vw;
+    margin-top: 4vh;
+}
+
 .ghandiOverlay {
     min-height: 100vh;
     /* transform: translate(0px, -10vh); */
@@ -109,9 +120,11 @@ svg {
 
 .telegramButton {
     margin-bottom: 50px !important;
+    display: flex;
+    flex-direction: row;
 }
 
-.submitButton:hover, .submitButton:active, .submitButton:focus, .telegramButton:hover, .telegramButton:active, .telegramButton:focus {
+.submitButton:hover, .submitButton:active, .submitButton:focus, .telegramButton:hover, .telegramButton:active, .telegramButton:focus, .needSupplyButton:hover, .needSupplyButton:active, .needSupplyButton:focus {
     border: 1px solid rgba(255, 255, 255, 0.7);
     background-color: transparent;
 }
@@ -128,6 +141,23 @@ svg {
     display: flex;
     flex-direction: row;
     margin-top: -60px !important;
+}
+
+.telegramImage {
+    background-image: url(/static/tele.png);
+    width: 24px;
+    height: 24px;
+}
+
+.flexrow {
+    display: flex;
+    flex-direction: row;
+}
+
+.telegramButtonText {
+    margin: auto;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 @media (max-width: 1000px) {
@@ -154,6 +184,10 @@ svg {
         white-space: initial;
         padding: 15px 10px 15px 10px;
     }
+
+    .text-1 {
+        padding-top: 15vh;
+    }
     
     .text-4 {
         margin-top: 50px !important;
@@ -174,6 +208,12 @@ svg {
 
     .mainFooter {
         flex-direction: column;
+    }
+
+    .needSupplyButton {
+        width: 80vw;
+        margin-right: 10vw;
+        margin-top: 5vh;
     }
 
 }
