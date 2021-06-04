@@ -6,7 +6,7 @@ import os
 client = pymongo.MongoClient("mongodb+srv://ojas:Ojulala02@cluster0.kfpcm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
 db = client.get_database('UserData')
 Information_Collection = db.get_collection("Information")
-Items = { "Oxygen Cylinder":1, "Hospital Bed":2,  "Plasma" : 3,  "Remedisvir":4,  "Fabiflu" : 5, "Tocilizumbad":6, "Oxygen Refill":7}
+Items = [ "Oxygen Cylinder", "Hospital Bed",  "Plasma",  "Remedisvir",  "Fabiflu", "Tocilizumbad", "Oxygen Refill","All Items"]
 application = Flask(__name__)
 
 @application.route("/", methods = ["POST","GET"])
@@ -15,23 +15,43 @@ def home():
 	
 @application.route("/find",methods =  ["POST","GET"])
 def find():
-
-	Items = { "Oxygen Cylinder":1, "Hospital Bed":2,  "Plasma" : 3,  "Remedisvir":4,  "Fabiflu" : 5, "Tocilizumbad":6, "Oxygen Refill":7}
-
+	recipients = []
 	donations = request.form["Donation"] 
-	donation = Items[donations]
 	location = request.form["Location"]
 
+	if donations == "All Items" and location =="All Locations":
+		out = Information_Collection.find()
+		for i in out:
+			recipients.append(i)
+		if recipients == []:
+			return render_template("nil.html")
+		return render_template("results.html",recipients = recipients, donation = 8 ,location="All Locations",items = Items)
+	
+	if donations == "All Items":
+		out = Information_Collection.find({"Location":{"$eq":location}})
+		for i in out:
+			recipients.append(i)
+		if recipients == []:
+			return render_template("nil.html")
+		return render_template("results.html",recipients = recipients, donation = 8 ,location=location,items = Items)
+	
+	if location == "All Locations":
+		donation = Items.index(donations) +1
+		out = Information_Collection.find({"Item":{"$eq":donation}})
+		for i in out:
+			recipients.append(i)
+		if recipients == []:
+			return render_template("nil.html")
+		return render_template("results.html",recipients = recipients, donation = donation ,location="All Locations",items = Items)
+
+	donation = Items.index(donations)+1
 	out = Information_Collection.find( {"$and":[{"Item":{"$eq":donation}},{"Location":{"$eq":location}}]}   )           
 
-
-
-	recipients = []
 	for i in out:
 		recipients.append(i)
 	if recipients == []:
 		return render_template("nil.html")
-	return render_template("results.html",recipients = recipients, donation = donations ,location=location)
+	return render_template("results.html",recipients = recipients, donation = donations ,location=location,items = Items)
 	
 	
 if __name__ == "__main__":
