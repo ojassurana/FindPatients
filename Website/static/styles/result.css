@@ -81,4 +81,36 @@ td {
         width: 80vw;
     }
 
+    tr {
+        font-size: 0.5rem;
+    }
+
+    td {
+        padding: 7.5px 10px 7.5px 10px;
+    }
+
+    .tableHeaderRow {
+        font-size: 0.7rem;
+    }
+
+    .mainHeader {
+        padding-top: 15vh;
+        font-size: 1.25rem !important;
+        justify-content: center;
+        display: flex;
+        margin-bottom: 10px !important;
+    }
+
+    .dot {
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        margin-left: 2vw;
+        margin-right: 2vw;
+    }
+
+    .mainTable {
+        margin-top: 0px;
+    }
+
 }
