@@ -22,7 +22,8 @@ def find():
 	if donations == "All Items" and location =="All Locations":
 		out = Information_Collection.find()
 		for i in out:
-			recipients.append(i)
+			if len(i) == 5:
+				recipients.append(i)
 		if recipients == []:
 			return render_template("nil.html")
 		return render_template("results.html",recipients = recipients, donation = 8 ,location="All Locations",items = Items)
@@ -30,7 +31,8 @@ def find():
 	if donations == "All Items":
 		out = Information_Collection.find({"Location":{"$eq":location}})
 		for i in out:
-			recipients.append(i)
+			if len(i) == 5:
+				recipients.append(i)
 		if recipients == []:
 			return render_template("nil.html")
 		return render_template("results.html",recipients = recipients, donation = 8 ,location=location,items = Items)
@@ -39,7 +41,8 @@ def find():
 		donation = Items.index(donations) +1
 		out = Information_Collection.find({"Item":{"$eq":donation}})
 		for i in out:
-			recipients.append(i)
+			if len(i) == 5:
+				recipients.append(i)
 		if recipients == []:
 			return render_template("nil.html")
 		return render_template("results.html",recipients = recipients, donation = donation ,location="All Locations",items = Items)
@@ -48,10 +51,11 @@ def find():
 	out = Information_Collection.find( {"$and":[{"Item":{"$eq":donation}},{"Location":{"$eq":location}}]}   )           
 
 	for i in out:
-		recipients.append(i)
+		if len(i) == 5:
+				recipients.append(i)
 	if recipients == []:
 		return render_template("nil.html")
-	return render_template("results.html",recipients = recipients, donation = donations ,location=location,items = Items)
+	return render_template("results.html",recipients = recipients, donation = donation ,location=location,items = Items)
 	
 	
 if __name__ == "__main__":
